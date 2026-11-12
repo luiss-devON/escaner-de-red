@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "escaner-de-red"
+version = "1.0.0"
+description = "Descubre los dispositivos de tu red local, revisa sus puertos abiertos y recibe avisos de intrusos."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Luis Castro" }]
+keywords = ["redes", "escaner", "seguridad", "puertos", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Networking :: Monitoring",
+]
+dependencies = []
+
+[project.scripts]
+escaner = "escaner.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
