@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import ipaddress
 import math
-import platform
 import shutil
 import socket
 import subprocess
+import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -44,10 +44,9 @@ def ping(ip: str, timeout: float = 1.0) -> bool:
     ejecutable = shutil.which("ping")
     if not ejecutable:
         return False
-    sistema = platform.system()
-    if sistema == "Windows":
+    if sys.platform == "win32":
         args = [ejecutable, "-n", "1", "-w", str(int(timeout * 1000)), ip]
-    elif sistema == "Darwin":
+    elif sys.platform == "darwin":
         args = [ejecutable, "-c", "1", "-W", str(int(timeout * 1000)), ip]
     else:
         args = [ejecutable, "-c", "1", "-W", str(max(1, math.ceil(timeout))), ip]
