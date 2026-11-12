@@ -9,6 +9,8 @@
 
 No necesita permisos de administrador ni instalar nada extra: solo Python.
 
+![Reporte HTML del escáner](docs/reporte.png)
+
 ## ✨ Características
 
 - **Descubrimiento de dispositivos**: ping en paralelo + sondeo TCP + tabla ARP, para encontrar también equipos que bloquean el ping.
