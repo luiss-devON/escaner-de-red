@@ -110,3 +110,7 @@ tests/                 # 25 tests con unittest
 ## 📄 Licencia
 
 MIT
+
+---
+
+Hecho por **Luis José Castro Palacios**.
